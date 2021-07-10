@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>virtual piano</title>
+  <link rel="stylesheet" href="piano.css">
+  <script src="piano.js"></script>
+  <style>
+    html{
+    height: 100%;
+      }
+      body{
+      
+          margin:0%;
+          padding:0%;
+          height:100%;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          background-color: gray;
+          background-image: linear-gradient(rgb(104, 104, 211),rgb(197, 35, 162)) ;
+      }
+      #piano{
+          padding: 30px;
+          border-radius: 40px;
+          justify-content: center;
+          margin-left:4px;
+          width:400px;
+          height:400px;
+          background-color: black;
+          margin-top: 100px;
+      
+      }
+      .pianokey{
+          display:flex;
+          justify-content: center;
+          margin-left: 4px;
+      }
+      
+      
+      .white{
+          width:60px;
+          height:240px;
+          background-color: white;
+          border:1px solid black;
+          border-radius:0 0 6px 6px ;
+          outline: none;
+          cursor: pointer;
+      
+      }
+      .black{
+          position:relative;
+          width:41px;
+          background-image: linear-gradient(black,rgb(32, 28, 28),);
+          height:100px;
+          border:3px solid black;
+          outline:none;
+          cursor:pointer;
+          margin-left: -20px;
+          margin-right:-20px ;
+      
+      }
+      
+
+  </style>
+</head>
+<body>
+  
+  <div id="piano" align="center">
+    <marquee behavior="fixed" direction="right" style="color: honeydew; font-size: large; ">Virtual piano</marquee>
+    <img src="speaker.jpg" alt="" width="100px"  height="100px" style=" border-radius:30px;">
+  
+    <img src="speaker.jpg" alt="" style="width: 100px; height: 100px;margin-left: 195px; border-radius: 30px;">
+    <br><br><br>
+
+    <div class="pianokey">
+      <button id="white1" class="white" data-note="A" onclick="A.play()"></button>   
+      <button id="black1" class="black" data-note="Ab" onclick="Ab.play()"></button>
+      <button id="white2" class="white" data-note="B" onclick="B.play()"></button> 
+      <button id="black2" class="black" data-note="Bb" onclick="Bb.play()"></button>
+      <button id="white3" class="white" data-note="C" onclick="C.play()"></button>
+      <button id="white4" class="white" data-note="D" onclick="D.play()"></button>
+      <button id="black3" class="black" data-note="Db" onclick="Db.play()"></button>
+      <button id="white5" class="white" data-note="E" onclick="E.play()"></button>
+      <button id="black4" class="black" data-note="Eb" onclick="Eb.play()"></button>
+      <button id="white6" class="white" data-note="F" onclick="F.play()"></button>
+      <button id="black5"class="black" data-note="G" onclick="G.play()"></button>
+      <button id="white7" class="white" data-note="Gb" onclick="Gb.play()"></button>
+     
+     
+  </div>
+  <br><br>
+  <button  onclick="changecolor()" style="padding: 20px; color: hotpink; background-color: black;">color</button>
+  </div>
+
+  <script>
+    function changecolor(){
+    var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor="rgb("+r+","+g+","+b+")"
+              document.getElementById("white1").style.background=mycolor
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("black1").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("white2").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("black2").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("white3").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("white4").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("black3").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("white5").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("black4").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("white6").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("black5").style.background=mycolor1
+
+              var r=Math.floor(Math.random()*256);
+              var g=Math.floor(Math.random()*256);
+              var b=Math.floor(Math.random()*256);
+              var mycolor1="rgb("+r+","+g+","+b+")"
+              document.getElementById("white7").style.background=mycolor1
+              
+              
+              
+
+
+
+             
+    
+    }
+  var A=new Audio()
+  A.src="notes/notes_A.mp3";
+  
+
+  var Ab=new Audio()
+  Ab.src="notes/notes_Ab.mp3";
+
+  var B=new Audio()
+  B.src="notes/notes_B.mp3";
+
+  var Bb=new Audio()
+  Bb.src="notes/notes_Bb.mp3";
+
+  var C=new Audio()
+  C.src="notes/notes_C.mp3";
+
+  var D=new Audio()
+  D.src="notes/notes_D.mp3";
+
+  var Db=new Audio()
+  Db.src="notes/notes_Db.mp3";
+
+  var E=new Audio()
+  E.src="notes/notes_E.mp3";
+
+  var Eb=new Audio()
+  Eb.src="notes/notes_Eb.mp3";
+
+  var F=new Audio()
+  F.src="notes/notes_F.mp3";
+
+  var G=new Audio()
+  G.src="notes/notes_G.mp3";
+
+  var Gb=new Audio()
+  Gb.src="notes/notes_Gb.mp3";
+  
+
+    
+  </script>
+</body>
+</html>
